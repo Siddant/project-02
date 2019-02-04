@@ -1,0 +1,59 @@
+.card-image {
+  .image {
+    height: 300px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+.body {
+  background-color: #F8F8F8;
+}
+.card {
+  background-color: #C8C8C8;
+  -webkit-box-shadow: -2px -2px 19px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: -2px -2px 19px -4px rgba(0,0,0,0.75);
+  box-shadow: -2px -2px 19px -4px rgba(0,0,0,0.75);
+}
+.card-header-title {
+  height: 100px;
+}
+.card-content{
+  justify-content: center;
+}
+.scores {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.image img{
+  width: 100%;
+}
+.poster {
+  display: flex;
+  justify-content: center;
+}
+
+.map{
+  height: 70vh;
+  width: 120vh;
+  margin: 0 auto;
+
+}
+.custom-marker {
+  font-size: 16px;
+  font-weight: bold;
+  width: 70px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
