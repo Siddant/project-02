@@ -12,7 +12,7 @@ class MoviesShow extends React.Component {
     }
   }
   componentDidMount(){
-    axios.get(`http://www.omdbapi.com/?i=${this.props.match.params.id}&apikey=591dc16c`)
+    axios.get(`https://www.omdbapi.com/?i=${this.props.match.params.id}&apikey=591dc16c`)
       .then(res => this.setState({movie: res.data}))
       .catch(err => this.setState({ errors: err}))
 
