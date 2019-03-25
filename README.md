@@ -8,10 +8,6 @@ To create a web application using React and external APIs.
 
 A live version of this site can be found on Heroku ----> https://react-film-database.herokuapp.com/
 
-
-<!-- A group project working in with another General Assembly student to create a React web application, across two days. The concept of the project was to get familiarise working with API. The project interacted with the OMDB API to fetch data about movies and display it on the web. This project was paired coded, so the coding was divided equally. The feature I implemented was using the Mapbox API to display cinemas around your location, after fetching the data from the Movieglue API. -->
-
-
 ## Timeframe
 2 Days
 
@@ -23,7 +19,7 @@ A live version of this site can be found on Heroku ----> https://react-film-data
 * Webpack
 * Bulma (CSS framework)
 * Git/GitHub
-* Express(added later for deployment purposes)
+* Express
 * Request-promise
 * axios
 * OMDb API
@@ -35,3 +31,13 @@ A live version of this site can be found on Heroku ----> https://react-film-data
 1. Clone or download the repo
 2. Run ```yarn``` in Terminal
 3. Run webpack dev server with ```yarn run serve```
+
+## Overview
+React Film Database is a front-end web application that allows users to search for their favourite movies, view their details and find cinemas near them. We aimed to created a web application similar to IMDB website.
+
+## Instruction
+
+## Process
+We started the project by seraching for API's which could be useful for us, after few hours of searching we decided to use the OMDB API. The API was used to fetch data about movies and these data were displayed on our application. We also wanted to use MovieQuotes API to generete a random quote from the movie, but we didnot recived the access key therefore we had remove this feature.
+
+
