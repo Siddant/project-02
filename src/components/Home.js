@@ -1,12 +1,12 @@
 import React from 'react'
 import axios from 'axios'
-const apikey =  process.env.apiToken
+const apikey = process.env.apiToken
 import debounce from 'lodash/debounce'
 
 import SearchResults from './SearchResults'
 
 class Home extends React.Component {
-  constructor(){
+  constructor() {
     super()
     this.state = {
       searched: 'Star',
@@ -17,34 +17,34 @@ class Home extends React.Component {
 
     this.delayedCallback = debounce(this.apiCall, 1000)
 
-    this.handleChange =this.handleChange.bind(this)
-    this.handleSubmit =this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  componentDidMount(){
-    axios.get('https://www.omdbapi.com/?s=star&apikey=591dc16c')
-      .then(res => this.setState({results: res.data.Search}))
+  componentDidMount() {
+    axios.get(`https://www.omdbapi.com/?s=star&apikey=591dc16c`)
+      .then(res => this.setState({ results: res.data.Search }))
   }
 
   apiCall() {
     axios.get(`https://www.omdbapi.com/?s=${this.state.search}&type=movie&apikey=591dc16c`)
       .then(res => {
-        if(res.data.Response === 'True') this.setState({results: res.data.Search, error: '', searched: this.state.search})
-        else this.setState({results: [], error: res.data.Error, searched: this.state.search})
+        if (res.data.Response === 'True') this.setState({ results: res.data.Search, error: '', searched: this.state.search })
+        else this.setState({ results: [], error: res.data.Error, searched: this.state.search })
         console.log(this.state)
       })
   }
 
-  handleChange({target: { name, value }}){
+  handleChange({ target: { name, value } }) {
     this.setState({ ...this.state, [name]: value })
     this.delayedCallback()
   }
-  handleSubmit(e){
+  handleSubmit(e) {
     e.preventDefault()
   }
   render() {
     console.log(this.state.search)
-    return(
+    return (
       <div>
         <section className="section">
           <div className="container">
@@ -52,7 +52,7 @@ class Home extends React.Component {
               <div className="field">
                 <label className="label">Search for movie</label>
                 <div className="control">
-                  <input className="input" type="text" placeholder="Search for movie" name="search" onChange={this.handleChange}/>
+                  <input className="input" type="text" placeholder="Search for movie" name="search" onChange={this.handleChange} />
                 </div>
               </div>
             </form>
@@ -65,7 +65,7 @@ class Home extends React.Component {
             <div className="columns is-multiline">
               {this.state.results && this.state.results.map(result =>
                 <div className="column is-one-fifth" key={result.imdbID}>
-                  <SearchResults {...result}/>
+                  <SearchResults {...result} />
                 </div>
               )}
               <div className="column">
