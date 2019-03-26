@@ -25,7 +25,6 @@ class CinemasNear extends React.Component{
   }
 
   getData(lat,lng){
-    console.log('latituer: '+lat,'long: '+lng)
     const headers = {
       headers: {
         'client': 'EDUC_4',
@@ -84,7 +83,7 @@ class CinemasNear extends React.Component{
     return(
       <section className="section">
         <h1 className="title">Cinemas Near Me</h1>
-        <button onClick={this.getLocation}>Locate Now</button>
+        <button className="button is-primary" onClick={this.getLocation}>Locate Now</button>
         <div className="map" ref={el => this.mapDiv = el}/>
       </section>
     )

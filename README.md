@@ -67,58 +67,59 @@ The features mention above were paired coded with my team member, we choosed to 
 ### Cinema near me
 This feature uses the users current location and display the cinema that are closet to the users. This feature was achieved by using two API's, MovieGlu API was used to find cinemas closet to the user and Mapbox API was used to display the cinema on the map. In order to connect 2 APIs together I had to write several function to achieve it. The start of the implementation process started by getting the users location, this was achieved by using the geolocation property that was used to locate the user's position. The geolocation property returns the latitude and longitude value of the users location. The ```getLocation()``` function get the users geolocation.
 ```
-  getLocation(){
-    navigator.geolocation.getCurrentPosition(postion => {
-      this.changeLocation(postion.coords.latitude, postion.coords.longitude)
-      })
-    }
+getLocation(){
+  navigator.geolocation.getCurrentPosition(postion => {
+    this.changeLocation(postion.coords.latitude, postion.coords.longitude)
+  })
+}
 ```
 
 The users geo coordination was passed to another function called ```changeLocation()```, this function uses the latitude and longitude to display the location of the user on the map which was provided by the Mapbox API. To get the cinemas based on the users location, I had create another function called ```getData()```. I also had to pass the geo coordination as the MovieGlu API required the latitude and longitude.
 
 ```
-    getData(lat,lng){
-      console.log('latituer: '+lat,'long: '+lng)
-      const headers = {
-        headers: {
-          'client': 'EDUC_4',
-          'Authorization': 'Basic RURVQ180OjZxRkJtdmxrTDN6RA==',
-          'x-api-key': apikey,
-          'api-version': 'v102',
-          'geolocation': `${lat};${lng}`
-        }
-      }
-      axios.get('https://cors-anywhere.herokuapp.com/https://api-gate.movieglu.com/cinemasNearby/?n=10',headers )
-      .then(res =>{
-        this.setState({cinemas: res.data.cinemas})
-        this.plotMap()
-        } )
-        .catch(err=> console.log(err))
-      }
+getData(lat,lng){
+  const headers = {
+    headers: {
+      'client': 'EDUC_4',
+      'Authorization': 'Basic RURVQ180OjZxRkJtdmxrTDN6RA==',
+      'x-api-key': apikey,
+      'api-version': 'v102',
+      'geolocation': `${lat};${lng}`
+    }
+  }
+  axios.get('https://cors-anywhere.herokuapp.com/https://api-gate.movieglu.com/cinemasNearby/?n=10',headers )
+    .then(res =>{
+      this.setState({cinemas: res.data.cinemas})
+      this.plotMap()
+    } )
+    .catch(err=> console.log(err))
+}
 ```
 Once the data was received another function ```plotMap()``` had to be invoked. This function will get the data that is stored in the state and plot the location of the cinema on the map. In the data all of cinema location had geolocation included, therefore combining two API MovieGlu and Mapbox to create this function was comfortable to do.
 
 ```
-      plotMap(){
-        this.state.cinemas.map(cinema =>{
-          new mapboxgl.Marker({color: 'red'})
-          .setLngLat({lat: cinema.lat, lng: cinema.lng})
-          .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-          .setHTML(`
-            <p>${cinema.cinema_name}</p>
-            <p>${cinema.address}, ${cinema.city}, ${cinema.county} ${cinema.postcode}</p>
-            `
-            ))
-            .addTo(this.map)
-            } )
-          }
+plotMap(){
+  this.state.cinemas.map(cinema =>{
+    new mapboxgl.Marker({color: 'red'})
+    .setLngLat({lat: cinema.lat, lng: cinema.lng})
+    .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+    .setHTML(`
+        <p>${cinema.cinema_name}</p>
+        <p>${cinema.address}, ${cinema.city}, ${cinema.county} ${cinema.postcode}</p>
+        `
+        ))
+        .addTo(this.map)
+  } )
+}
 ```
 
 ## Challenges
+The main challenges of this project was to finding API's we could used, functionality and the idea for this project had to be changed serval times. Also combining 2 APIs together was hard, trying to figuring out how to chain functions together to pass the data around was the hardest part for me.
 
+Using the MovieGlu API was a bit of a challenge as well, when testing the API in Insomnia I was able to get the data from the API. But incorporating the API to the application proved to bit of a challenged as it gave an error stating ```No 'Access-Control-Allow-Origin'``` trying to solve this issue was time consuming. After searching the internet I able to solve it using ```https://cors-anywhere.herokuapp.com```.
 
 ## Wins
+For me the biggest win was being able to combine two different types of API to create a feature that allows you to locate cinema using your location. This was the first time using React to a create a web application for a project, therefore there were some new concept getting used to.
+
 
 ## Future Features
-
-          aasdad
