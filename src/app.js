@@ -12,8 +12,8 @@ import Nav from './components/Nav.js'
 
 
 class App extends React.Component {
-
   render() {
+    {  console.log(process.env.MAPBOX_TOKEN)}
     return (
       <BrowserRouter>
         <main>
