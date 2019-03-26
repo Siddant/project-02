@@ -50,9 +50,10 @@ axios.get(`https://www.omdbapi.com/?s=${this.state.search}&type=movie&apikey=${a
         console.log(this.state)
       })
 ```
-The features mention above were paired coded with my team member, we choosed to implement more feature to the application and therefore decided to split our workload. I decided to implement a feature which allow users to view cinemas located near their area, the other feature  implemented was the use of debouncing approach to allow user to search for movies without using the search button.
+The features mention above were paired coded with my team member, we choosed to implement more feature to the application and therefore decided to split our workload. I decided to implement a feature which allow users to located cinemas near their area, the other feature  implemented was the use of debouncing approach to allow user to search for movies without using the search button.
 
 ### Cinema near me
+This feature uses the users current location and display the cinema that are closet to the users. This feature was achieved by using two API's, MovieGlu API was used to find cinemas closet to the user and Mapbox API was used to display the cinema on the map. In order to connect 2 APIs together I had to write several function to achieve it. The start of the implementation process started by getting the users location which was achieved by using the geolocation property that was used to locate the user's position.  
 
 
 
@@ -63,9 +64,11 @@ The features mention above were paired coded with my team member, we choosed to 
 
 
 
+## Challenges
 
 
+## Wins
 
-
+## Future Features
 
 aasdad

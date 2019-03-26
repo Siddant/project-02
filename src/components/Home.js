@@ -22,7 +22,7 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    axios.get(`https://www.omdbapi.com/?s=star&apikey=591dc16c`)
+    axios.get('https://www.omdbapi.com/?s=star&apikey=591dc16c')
       .then(res => this.setState({ results: res.data.Search }))
   }
 
