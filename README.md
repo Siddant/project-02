@@ -123,7 +123,7 @@ Using the MovieGlu API was a bit of a challenge as well, when testing the API in
 For me the biggest win was being able to combine two different types of API to create a feature that allows you to locate cinema using your location. I wasn't really familiarly with React, therefore using it to create this application was a huge win. Also we did use some new concept such as state, destructing object, HTTP request Methods, classical component and functional component. By doing this project I am more comfortable with using these technologies for future projects.
 
 ## Future Features
-There some extra feature we wanted to implement to the project in the future:
+There some extra feature I want to implement in the future:
 * show recommendations based on the movie that was selected.
 * show the users where they can buy the movie they have selected.
 * show the list of movies that are currently being shown on the select cinema.
