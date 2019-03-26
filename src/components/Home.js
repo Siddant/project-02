@@ -39,9 +39,11 @@ class Home extends React.Component {
     this.setState({ ...this.state, [name]: value })
     this.delayedCallback()
   }
+
   handleSubmit(e) {
     e.preventDefault()
   }
+  
   render() {
     console.log(this.state.search)
     return (

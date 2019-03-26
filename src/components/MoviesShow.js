@@ -15,8 +15,6 @@ class MoviesShow extends React.Component {
     axios.get(`https://www.omdbapi.com/?i=${this.props.match.params.id}&apikey=591dc16c`)
       .then(res => this.setState({movie: res.data}))
       .catch(err => this.setState({ errors: err}))
-
-
   }
   render() {
     const {Title, Year, imdbRating, Metascore, Poster, Runtime, Genre, Director, Writer, Actors, Plot, Language, Country, BoxOffice} = this.state.movie
