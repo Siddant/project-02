@@ -36,15 +36,23 @@ A live version of this site can be found on Heroku ----> https://react-film-data
 React Film Database is a front-end web application that allows users to search for their favourite movies, view their details and find cinemas near them. We aimed to created a web application similar to IMDB website.
 
 ## Instruction
+1. The home page of the application will display all the movies which contains the title Star by default.
+
 ![screenshot](https://user-images.githubusercontent.com/5802969/55035646-62df2200-5010-11e9-9003-18f0d8b8033e.png)
+
+2. The user also has the ability to search for movies by giving the movie tile. The application will show an error message if the application cannot find the movie.
 
 ![screenshot 2019-01-11 at 10 56 35](https://user-images.githubusercontent.com/5802969/55035729-a33ea000-5010-11e9-93a7-aaf616e92968.png)
 
+3. If the application find the movies, then it will be displayed on the search result page. The user can click on any of the movies, which will redirect them to movies show page.
 
 ![screenshot](https://user-images.githubusercontent.com/5802969/55035650-6377b880-5010-11e9-876c-fe68e397880c.png)
 
+4. The movie show page  displays more detailed information on the movie including the movie's metascore, actors and plot but also the runtime, language and genre.
 
 ![screenshot](https://user-images.githubusercontent.com/5802969/55035644-62df2200-5010-11e9-8068-6061fde8364b.png)
+
+5. The user can also find cinemas near them on the Cinema Near Me tab, by clicking on the button. The application will get the user location and then update the map which will all the cinemas nearer to them. The blue marker indicated the users location and the red markers indicated the all the cinemas the application has found.
 
 ![screenshot](https://user-images.githubusercontent.com/5802969/55035633-5d81d780-5010-11e9-9c9e-179be8a834c1.png)
 
