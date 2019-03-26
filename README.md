@@ -36,6 +36,17 @@ A live version of this site can be found on Heroku ----> https://react-film-data
 React Film Database is a front-end web application that allows users to search for their favourite movies, view their details and find cinemas near them. We aimed to created a web application similar to IMDB website.
 
 ## Instruction
+![screenshot](https://user-images.githubusercontent.com/5802969/55035646-62df2200-5010-11e9-9003-18f0d8b8033e.png)
+
+![screenshot 2019-01-11 at 10 56 35](https://user-images.githubusercontent.com/5802969/55035729-a33ea000-5010-11e9-93a7-aaf616e92968.png)
+
+
+![screenshot](https://user-images.githubusercontent.com/5802969/55035650-6377b880-5010-11e9-876c-fe68e397880c.png)
+
+
+![screenshot](https://user-images.githubusercontent.com/5802969/55035644-62df2200-5010-11e9-8068-6061fde8364b.png)
+
+![screenshot](https://user-images.githubusercontent.com/5802969/55035633-5d81d780-5010-11e9-9c9e-179be8a834c1.png)
 
 ## Process
 We started the project by searching for API's which could be useful for us, after few hours of searching we decided to use the OMDB API. The API was used to fetch data about movies and these data were displayed on our application. We also wanted to use MovieQuotes API to generated a random quote from the movie, but we did not received the access key on time therefore we had remove this feature.
@@ -128,3 +139,4 @@ There some extra feature I want to implement in the future:
 * show the users where they can buy the movie they have selected.
 * show the list of movies that are currently being shown on the select cinema.
 * using navigation system direct users to the cinema they have selected.
+* so far there is a limited of 10 movies that can be shown to the users, I would like to implement a pagination.
