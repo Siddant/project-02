@@ -1,7 +1,7 @@
 import React from 'react'
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
-mapboxgl.accessToken = process.env.MAPBOX_TOKEN
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2lkZGFudCIsImEiOiJjanIyM2ExaWUwdnF1NDNxcTdsZzk2YThsIn0.fULncdmb9pF9YfnkS4J0Rw'
 import axios from 'axios'
 
 
