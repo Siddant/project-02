@@ -120,7 +120,7 @@ The main challenges of this project was to finding API's we could used, function
 Using the MovieGlu API was a bit of a challenge as well, when testing the API in Insomnia I was able to get the data from the API. But incorporating the API to the application proved to bit of a challenged as it gave an error stating ```No 'Access-Control-Allow-Origin'``` trying to solve this issue was time consuming. After searching the internet I able to solve it using ```https://cors-anywhere.herokuapp.com```.
 
 ## Wins
-For me the biggest win was being able to combine two different types of API to create a feature that allows you to locate cinema using your location. I wasn't really familiarly with React, therefore using it to create this application was a huge win. Also we did use some new concept such as state, destructing object, HTTP request Methods, classical component and functional component. By doing this project I am more comfortable with using these technologies for future projects.
+For me the biggest win was being able to combine two different types of API to create a feature that allows users to locate cinema using their location. I wasn't really familiarly with React, therefore using it to create this application was a huge win. Also we did use some new concept such as state, destructing object, HTTP request Methods, classical component and functional component. By doing this project I am more comfortable with using these technologies for future projects.
 
 ## Future Features
 There some extra feature I want to implement in the future:
