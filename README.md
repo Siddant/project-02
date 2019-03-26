@@ -62,7 +62,8 @@ axios.get(`https://www.omdbapi.com/?s=${this.state.search}&type=movie&apikey=${a
   console.log(this.state)
   })
   ```
-The features mention above were paired coded with my team member, we choosed to implement more feature to the application and therefore decided to split our workload. I decided to implement a feature which allow users to located cinemas near their area, the other feature  implemented was the use of debouncing approach to allow user to search for movies without using the search button.
+The features mention above were paired coded, we choosed to implement more feature to the application and therefore decided to split our workload. I decided to implement a feature which allow users to located cinemas near their area. The other feature implemented was the use of debouncing approach to allow user to search for movies without using the search button, this feature was implement by my
+colleague.
 
 ### Cinema near me
 This feature uses the users current location and display the cinema that are closet to the users. This feature was achieved by using two API's, MovieGlu API was used to find cinemas closet to the user and Mapbox API was used to display the cinema on the map. In order to connect 2 APIs together I had to write several function to achieve it. The start of the implementation process started by getting the users location, this was achieved by using the geolocation property that was used to locate the user's position. The geolocation property returns the latitude and longitude value of the users location. The ```getLocation()``` function get the users geolocation.
@@ -119,7 +120,11 @@ The main challenges of this project was to finding API's we could used, function
 Using the MovieGlu API was a bit of a challenge as well, when testing the API in Insomnia I was able to get the data from the API. But incorporating the API to the application proved to bit of a challenged as it gave an error stating ```No 'Access-Control-Allow-Origin'``` trying to solve this issue was time consuming. After searching the internet I able to solve it using ```https://cors-anywhere.herokuapp.com```.
 
 ## Wins
-For me the biggest win was being able to combine two different types of API to create a feature that allows you to locate cinema using your location. This was the first time using React to a create a web application for a project, therefore there were some new concept getting used to.
-
+For me the biggest win was being able to combine two different types of API to create a feature that allows you to locate cinema using your location. I wasn't really familiarly with React, therefore using it to create this application was a huge win. Also we did use some new concept such as state, destructing object, HTTP request Methods, classical component and functional component. By doing this project I am more comfortable with using these technologies for future projects.
 
 ## Future Features
+There some extra feature we wanted to implement to the project in the future:
+* show recommendations based on the movie that was selected.
+* show the users where they can buy the movie they have selected.
+* show the list of movies that are currently being shown on the select cinema.
+* using navigation system direct users to the cinema they have selected.
