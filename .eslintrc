@@ -1,0 +1,95 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "plugins": [
+    "prettier",
+    "babel",
+    "react",
+    "react-redux",
+    "react-hooks",
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "airbnb",
+    "prettier",
+    "plugin:react/recommended",
+    "plugin:react-redux/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "no-underscore-dangle": [0],
+    "import/imports-first": ["error", "absolute-first"],
+    "import/newline-after-import": "error",
+    "import/prefer-default-export": [0],
+    "brace-style": "error",
+    "camelcase": ["error", { "properties": "never" }],
+    "func-call-spacing": ["error", "never"],
+    "eqeqeq": "warn",
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "key-spacing": ["error", { "beforeColon": false }],
+    "no-console": "warn",
+    "no-fallthrough": "warn",
+    "prefer-const": "error",
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"],
+    "react/prop-types": [0],
+    "prettier/prettier": "error",
+    "no-nested-ternary": [0],
+    "react/button-has-type": [0],
+    "no-throw-literal": [0],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "arrow-body-style": "off",
+    "no-use-before-define": "off",
+    "react/jsx-props-no-spreading": "off"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 7,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "globals": {
+    "window": true,
+    "document": true,
+    "localStorage": true,
+    "FormData": true,
+    "FileReader": true,
+    "Blob": true,
+    "navigator": true,
+    "Headers": true,
+    "Request": true,
+    "fetch": true
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}
