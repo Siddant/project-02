@@ -63,7 +63,8 @@
     "@typescript-eslint/no-var-requires": "off",
     "arrow-body-style": "off",
     "no-use-before-define": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "no-shadow": "off"
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {

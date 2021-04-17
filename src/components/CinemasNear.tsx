@@ -96,8 +96,7 @@ const CinemasNear: React.FC = () => {
     new mapboxgl.Marker()
       .setLngLat({ lat, lng })
       .setPopup(
-        new mapboxgl.Popup({ offset: 25 }) // add popups
-          .setHTML('<p>your Location</p>')
+        new mapboxgl.Popup({ offset: 25 }).setHTML('<p>your Location</p>')
       )
       .addTo(map)
   }

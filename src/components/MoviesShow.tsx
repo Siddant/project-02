@@ -1,95 +1,24 @@
-import React, { useReducer, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 
-interface MoviesDetail {
-  Title: string
-  Year: string
-  imdbRating: string
-  Metascore: string
-  Poster: string
-  Runtime: string
-  Genre: string
-  Director: string
-  Writer: string
-  Actors: string
-  Plot: string
-  Language: string
-  Country: string
-  BoxOffice: string
-}
-
-interface State {
-  search: string
-  movie?: MoviesDetail
-  error?: Error
-}
+import { FilmMovieActions, getSelectedMovies } from '../redux'
 
 interface ParamsProps {
   id: string
 }
 
-const initialState: State = {
-  search: '',
-  movie: undefined,
-  error: undefined,
-}
-
-interface Action<T> {
-  type: T
-}
-
-interface SearchMovie extends Action<'SEARCH_MOVIE'> {
-  payload: {
-    search: State['search']
-  }
-}
-interface FetchMovieSuccess extends Action<'FETCH_MOVIE_SUCCESS'> {
-  payload: {
-    movie: State['movie']
-  }
-}
-
-interface FetchMovieError extends Action<'FETCH_MOVIE_ERROR'> {
-  payload: {
-    error: State['error']
-  }
-}
-
-type ActionType = SearchMovie | FetchMovieSuccess | FetchMovieError
-
-const reducer = (state: State, action: ActionType) => {
-  switch (action.type) {
-    case 'SEARCH_MOVIE':
-      return { ...state, search: action.payload.search }
-    case 'FETCH_MOVIE_SUCCESS':
-      return { ...state, movie: action.payload.movie }
-    case 'FETCH_MOVIE_ERROR':
-      return { ...state, error: action.payload.error }
-    default:
-      return state
-  }
-}
-
 const MoviesShow: React.FC = () => {
-  const [state, dispatch] = useReducer(reducer, initialState)
   const params = useParams<ParamsProps>()
+  const dispatch = useDispatch()
+  const movie = useSelector(getSelectedMovies)
 
   useEffect(() => {
-    axios
-      .get(`https://www.omdbapi.com/?i=${params.id}&apikey=591dc16c`)
-      .then(res =>
-        dispatch({
-          type: 'FETCH_MOVIE_SUCCESS',
-          payload: { movie: res.data },
-        })
-      )
-      .catch(err =>
-        dispatch({ type: 'FETCH_MOVIE_ERROR', payload: { error: err } })
-      )
-  }, [params.id])
+    dispatch(FilmMovieActions.fetchMovie(params.id))
+  }, [])
 
-  if (!state.movie) return null
+  if (!movie) return null
 
   const {
     Title,
@@ -106,7 +35,7 @@ const MoviesShow: React.FC = () => {
     Language,
     Country,
     BoxOffice,
-  } = state.movie
+  } = movie
 
   return (
     <div className="section">
