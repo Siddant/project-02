@@ -25,7 +25,7 @@
     "@babel/preset-typescript": "^7.13.0",
     "@types/lodash": "^4.14.168",
     "@types/mapbox-gl": "^2.1.1",
-    "@types/react": "^17.0.3",
+    "@types/react": "17.0.30",
     "@types/react-dom": "^17.0.3",
     "@types/react-router-dom": "^5.1.7",
     "@types/redux": "^3.6.0",
