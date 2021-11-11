@@ -3,7 +3,6 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
-const ESLintPlugin = require('eslint-webpack-plugin')
 
 module.exports = {
   entry: './src/App.tsx',
@@ -30,11 +29,8 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: path.resolve('src'),
-    hotOnly: true,
     open: true,
     port: 8000,
-    watchContentBase: true,
     historyApiFallback: true,
   },
   plugins: [
@@ -51,6 +47,5 @@ module.exports = {
         files: './src/**/*.+(ts|tsx)',
       },
     }),
-    new ESLintPlugin('./'),
   ],
 }

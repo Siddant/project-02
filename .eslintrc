@@ -64,7 +64,16 @@
     "arrow-body-style": "off",
     "no-use-before-define": "off",
     "react/jsx-props-no-spreading": "off",
-    "no-shadow": "off"
+    "no-shadow": "off",
+    "react/function-component-definition": "off",
+    "react/no-namespace": "off",
+    "react/no-arrow-function-lifecycle": "off",
+    "default-param-last": "off",
+    "react/prefer-exact-props": "off",
+    "react/no-invalid-html-attribute": "off",
+    "react/no-unused-class-component-methods": "off",
+    "import/no-import-module-exports": "off",
+    "import/no-relative-packages": "off"
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
