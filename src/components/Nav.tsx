@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 interface PreviousPath {
@@ -7,18 +7,19 @@ interface PreviousPath {
 
 const Nav: React.FC = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
-
-  const location = useLocation<PreviousPath>()
+  const location = useLocation()
+  const ref = useRef(location.pathname)
 
   const toggleNavbar = () => {
     setNavbarOpen(!navbarOpen)
   }
 
   useEffect(() => {
-    if (location.pathname !== location?.state?.prevPath) {
+    if (location.pathname !== ref.current) {
       setNavbarOpen(false)
+      ref.current = location.pathname
     }
-  }, [location.pathname, location?.state?.prevPath])
+  }, [location])
 
   return (
     <nav
@@ -27,15 +28,12 @@ const Nav: React.FC = () => {
       aria-label="main navigation"
     >
       <div className="navbar-brand">
-        <Link
-          className="navbar-item"
-          to={{ pathname: '/', state: { prevPath: location.pathname } }}
-        >
+        <Link className="navbar-item" to="/">
           <p>Movie List</p>
         </Link>
         <button
           className={`navbar-burger ${navbarOpen ? 'is-active' : ''}`}
-          onClick={() => toggleNavbar}
+          onClick={toggleNavbar}
         >
           <span aria-hidden="true" />
           <span aria-hidden="true" />
@@ -44,19 +42,10 @@ const Nav: React.FC = () => {
       </div>
       <div className={`navbar-menu ${navbarOpen ? 'is-active' : ''}`}>
         <div className="navbar-start">
-          <Link
-            className="navbar-item"
-            to={{ pathname: '/', state: { prevPath: location.pathname } }}
-          >
+          <Link className="navbar-item" to="/">
             Home
           </Link>
-          <Link
-            className="navbar-item"
-            to={{
-              pathname: '/cinemas',
-              state: { prevPath: location.pathname },
-            }}
-          >
+          <Link className="navbar-item" to="/cinemas">
             Cinemas Near Me
           </Link>
         </div>

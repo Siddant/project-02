@@ -1,14 +1,10 @@
-/* eslint-disable no-console */
 import React, { useState, useEffect, useRef } from 'react'
 import mapboxgl from 'mapbox-gl'
 import axios from 'axios'
 
 import 'mapbox-gl/dist/mapbox-gl.css'
 
-mapboxgl.accessToken =
-  'pk.eyJ1Ijoic2lkZGFudCIsImEiOiJjanIyM2ExaWUwdnF1NDNxcTdsZzk2YThsIn0.fULncdmb9pF9YfnkS4J0Rw'
-
-// process.env.MAPBOX_TOKEN
+mapboxgl.accessToken = process.env.MAPBOX_TOKEN as string
 
 interface Cinemas {
   // eslint-disable-next-line camelcase
@@ -82,6 +78,7 @@ const CinemasNear: React.FC = () => {
       postion => {
         changeLocation(postion.coords.latitude, postion.coords.longitude)
       },
+      // eslint-disable-next-line no-console
       () => console.log('err')
     )
   }

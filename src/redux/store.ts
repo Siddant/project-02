@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware } from 'redux'
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { composeWithDevTools } from 'redux-devtools-extension'
 import createSagaMiddleware from 'redux-saga'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 import reducers from './reducers'
 import sagas from './sagas'

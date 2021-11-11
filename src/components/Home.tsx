@@ -15,6 +15,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     apiCall(search)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const apiCall = (search: string) => {

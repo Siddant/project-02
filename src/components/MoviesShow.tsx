@@ -5,18 +5,14 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { FilmMovieActions, getSelectedMovies } from '../redux'
 
-interface ParamsProps {
-  id: string
-}
-
 const MoviesShow: React.FC = () => {
-  const params = useParams<ParamsProps>()
+  const { id } = useParams<string>()
   const dispatch = useDispatch()
   const movie = useSelector(getSelectedMovies)
 
   useEffect(() => {
-    dispatch(FilmMovieActions.fetchMovie(params.id))
-  }, [])
+    dispatch(FilmMovieActions.fetchMovie(id as string))
+  }, [dispatch, id])
 
   if (!movie) return null
 

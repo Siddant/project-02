@@ -11,14 +11,14 @@ function* fetchMovies({
   try {
     const { data }: AxiosResponse<SearchResults> = yield call(
       axios.get,
-      `https://www.omdbapi.com/?s=${payload.search}&apikey=591dc16c`
+      `https://www.omdbapi.com/?s=${payload.search}&apikey=${process.env.API_KEY}`
     )
     if (data.Response === 'FETCH_MOVIE_ERROR') {
       yield put(FilmMovieActions.fetchMovieError(data.Error))
     }
     yield put(FilmMovieActions.fetchMoviesSuccess(data.Search))
   } catch (e) {
-    yield put(FilmMovieActions.fetchMovieError(e))
+    yield put(FilmMovieActions.fetchMovieError(e as Error))
   }
 }
 
@@ -28,11 +28,11 @@ function* fetchMovie({
   try {
     const { data }: AxiosResponse<MoviesDetail> = yield call(
       axios.get,
-      `https://www.omdbapi.com/?i=${payload.id}&apikey=591dc16c`
+      `https://www.omdbapi.com/?i=${payload.id}&apikey=${process.env.API_KEY}`
     )
     yield put(FilmMovieActions.fetchMovieSuccess(data))
   } catch (e) {
-    yield put(FilmMovieActions.fetchMovieError(e))
+    yield put(FilmMovieActions.fetchMovieError(e as Error))
   }
 }
 
