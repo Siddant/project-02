@@ -55,7 +55,6 @@
     "eslint-plugin-react": "^7.27.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-react-redux": "^3.3.2",
-    "fork-ts-checker-webpack-plugin": "^6.4.0",
     "html-webpack-plugin": "5.5.0",
     "husky": "^7.0.4",
     "lint-staged": "^11.2.6",

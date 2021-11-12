@@ -2,7 +2,6 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
 module.exports = {
   entry: './src/App.tsx',
@@ -41,11 +40,5 @@ module.exports = {
       inject: 'body',
     }),
     new Dotenv(),
-    new ForkTsCheckerWebpackPlugin({
-      async: false,
-      eslint: {
-        files: './src/**/*.+(ts|tsx)',
-      },
-    }),
   ],
 }

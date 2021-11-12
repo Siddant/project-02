@@ -9,5 +9,3 @@ app.get('/*', (req, res) => res.sendFile(`${__dirname}/dist/index.html`))
 app.listen(process.env.PORT, () =>
   console.log(`Running on port ${process.env.PORT}`)
 )
-
-export {}
