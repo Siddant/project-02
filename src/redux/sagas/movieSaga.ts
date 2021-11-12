@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { put, call, takeLatest } from 'redux-saga/effects'
 
 import axios, { AxiosResponse } from 'axios'
@@ -9,6 +10,7 @@ function* fetchMovies({
   payload,
 }: ReturnType<typeof FilmMovieActions.fetchMovies>) {
   try {
+    console.log(process.env.API_KEY)
     const { data }: AxiosResponse<SearchResults> = yield call(
       axios.get,
       `https://www.omdbapi.com/?s=${payload.search}&apikey=${process.env.API_KEY}`
@@ -26,10 +28,12 @@ function* fetchMovie({
   payload,
 }: ReturnType<typeof FilmMovieActions.fetchMovie>) {
   try {
+    console.log(process.env.API_KEY)
     const { data }: AxiosResponse<MoviesDetail> = yield call(
       axios.get,
       `https://www.omdbapi.com/?i=${payload.id}&apikey=${process.env.API_KEY}`
     )
+
     yield put(FilmMovieActions.fetchMovieSuccess(data))
   } catch (e) {
     yield put(FilmMovieActions.fetchMovieError(e as Error))

@@ -1,7 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const Dotenv = require('dotenv-webpack')
+const dotenv = require('dotenv')
 
 module.exports = {
   entry: './src/App.tsx',
@@ -33,12 +33,18 @@ module.exports = {
     historyApiFallback: true,
   },
   plugins: [
+    new webpack.DefinePlugin({
+      // With dotenv (values must be stringified)
+      ...Object.entries(dotenv.config().parsed).reduce(
+        (acc, curr) => ({ ...acc, [`${curr[0]}`]: JSON.stringify(curr[1]) }),
+        {}
+      ),
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       filename: 'index.html',
       inject: 'body',
     }),
-    new Dotenv(),
   ],
 }
