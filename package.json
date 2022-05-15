@@ -57,7 +57,7 @@
     "eslint-plugin-react-redux": "^3.3.2",
     "html-webpack-plugin": "5.5.0",
     "husky": "^7.0.4",
-    "lint-staged": "^11.2.6",
+    "lint-staged": "12.4.1",
     "node-sass": "6.0.1",
     "prettier": "^2.4.1",
     "sass-loader": "12.3.0",
