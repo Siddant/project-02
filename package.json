@@ -33,7 +33,7 @@
     "@babel/preset-typescript": "^7.16.0",
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
-    "@types/lodash": "^4.14.176",
+    "@types/lodash": "4.14.185",
     "@types/mapbox-gl": "^2.4.2",
     "@types/node": "^16.11.7",
     "@types/react": "^17.0.34",
