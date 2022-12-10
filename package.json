@@ -78,7 +78,7 @@
     "bulma": "^0.9.3",
     "dotenv": "^10.0.0",
     "dotenv-webpack": "^7.0.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "lodash": "^4.17.21",
     "mapbox-gl": "^2.6.0",
     "react": "^17.0.2",
