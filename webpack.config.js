@@ -4,9 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 
 module.exports = {
-  entry: './src/app.js',
+  entry: './src/App.tsx',
   resolve: {
-    extensions: ['.js'],
+    extensions: ['.js', '.ts', '.tsx'],
   },
   output: {
     filename: 'bundle.js',
@@ -15,7 +15,11 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ },
+      {
+        test: /\.(ts|tsx)?$/,
+        use: 'babel-loader',
+        exclude: /node_modules/,
+      },
       { test: /\.css$/, use: ['style-loader', 'css-loader'] },
       {
         test: /\.s(a|c)ss$/,
