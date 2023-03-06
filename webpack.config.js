@@ -5,33 +5,36 @@ const Dotenv = require('dotenv-webpack')
 
 module.exports = {
   entry: './src/app.js',
+  resolve: {
+    extensions: ['.js'],
+  },
   output: {
     filename: 'bundle.js',
     path: path.resolve('dist'),
-    publicPath: '/'
+    publicPath: '/',
   },
   module: {
     rules: [
-      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.css$/, loader: ['style-loader', 'css-loader'] },
-      { test: /\.s(a|c)ss$/, loader: ['style-loader', 'css-loader', 'sass-loader'] }
-    ]
+      { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+      {
+        test: /\.s(a|c)ss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+    ],
   },
   devServer: {
-    contentBase: path.resolve('src'),
-    hot: true,
     open: true,
     port: 8000,
-    watchContentBase: true,
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       filename: 'index.html',
-      inject: 'body'
+      inject: 'body',
     }),
-    new Dotenv()
-  ]
+    new Dotenv(),
+  ],
 }
