@@ -43,7 +43,7 @@
     "@types/redux-actions": "^2.6.2",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
     "@typescript-eslint/parser": "^5.3.1",
-    "babel-loader": "8.2.3",
+    "babel-loader": "8.3.0",
     "css-loader": "6.5.1",
     "eslint": "^8.2.0",
     "eslint-config-airbnb": "^19.0.0",
