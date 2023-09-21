@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "buildCommand": "yarn build",
+  "outputDirectory": "dist",
+  "installCommand": "yarn",
+  "devCommand": "yarn start",
+
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    },
+    {
+      "src": "./index.js",
+      "use": "@vercel/node",
+      "config": { "includeFiles": "dist" }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "index.js"
+    }
+  ]
+}

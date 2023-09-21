@@ -10,7 +10,6 @@ import MoviesShow from './components/MoviesShow.js'
 import CinemasNear from './components/CinemasNear.js'
 import Nav from './components/Nav.js'
 
-
 class App extends React.Component {
   render() {
     return (
@@ -18,18 +17,14 @@ class App extends React.Component {
         <main>
           <Nav />
           <Switch>
-            <Route path="/cinemas" component={CinemasNear} />
-            <Route path="/movies/:id" component={MoviesShow} />
-            <Route path="/" component={Home}/>
+            <Route path='/cinemas' component={CinemasNear} />
+            <Route path='/movies/:id' component={MoviesShow} />
+            <Route path='/' component={Home} />
           </Switch>
         </main>
       </BrowserRouter>
-
     )
   }
 }
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-)
+ReactDOM.render(<App />, document.getElementById('root'))
